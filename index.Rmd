@@ -144,7 +144,7 @@ finalVote <- apply(preds, 1, majority)
 finalVote <- as.factor(finalVote)
 confusionMatrix(finalVote, testing_set$classe)
 ```
-We can see here that the accuracy of combined classifiers is `r confusionMatrix(finalVote, testing_set$classe)$overall[1] * 100` percent. This is the out of sample accuracy (remember that accuracy could be a method to calculate model performance on testing and validation data set). We are going to use the same voting system to predict the labels in the validation data set.
+We can see here that the accuracy of combined classifiers is `r confusionMatrix(finalVote, testing_set$classe)$overall[1] * 100` percent. This is the out of sample accuracy (remember that accuracy is a way to assess model performance on testing and validation data sets, especially in classification problems). We are going to use the same voting system to predict the labels in the validation data set.
 
 
 
