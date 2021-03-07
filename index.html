@@ -571,7 +571,7 @@ confusionMatrix(finalVote, testing_set$classe)</code></pre>
 ## Detection Rate         0.2838   0.1917   0.1719   0.1605   0.1819
 ## Detection Prevalence   0.2851   0.1951   0.1764   0.1611   0.1823
 ## Balanced Accuracy      0.9981   0.9931   0.9903   0.9891   0.9948</code></pre>
-<p>We can see here that the accuracy of combined classifiers is 98.9804241 percent. This is the out of sample accuracy. It’s slightly worse than the random forest model, but better than the other three. Therefore, it is still useful to pick this approach of predicting. We are going to use the same voting system to predict the labels in the validation data set.</p>
+<p>We can see here that the accuracy of combined classifiers is 98.9804241 percent. This is the out of sample accuracy (remember that accuracy is a way to assess model performance on testing and validation data sets, especially in classification problems). We are going to use the same voting system to predict the labels in the validation data set.</p>
 </div>
 </div>
 <div id="prediction" class="section level2">
@@ -584,7 +584,7 @@ predstest = data.frame(knn = predtest_knn,
                        gbm = predtest_gbm,
                        bag = predtest_bag,
                        rf = predtest_rf)
-apply(predstest, 1, majority)</code></pre>
+#apply(predstest, 1, majority) #the answer to prediction quiz</code></pre>
 <pre><code>##  [1] &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;E&quot; &quot;D&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;A&quot; &quot;E&quot; &quot;E&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot;
 ## [20] &quot;B&quot;</code></pre>
 </div>
