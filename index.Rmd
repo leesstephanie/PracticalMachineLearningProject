@@ -144,7 +144,7 @@ finalVote <- apply(preds, 1, majority)
 finalVote <- as.factor(finalVote)
 confusionMatrix(finalVote, testing_set$classe)
 ```
-We can see here that the accuracy of combined classifiers is `r confusionMatrix(finalVote, testing_set$classe)$overall[1] * 100` percent. This is the out of sample accuracy. It's slightly worse than the random forest model, but better than the other three. Therefore, it is still useful to pick this approach of predicting. We are going to use the same voting system to predict the labels in the validation data set.
+We can see here that the accuracy of combined classifiers is `r confusionMatrix(finalVote, testing_set$classe)$overall[1] * 100` percent. This is the out of sample accuracy (remember that accuracy could be a method to calculate model performance on testing and validation data set). We are going to use the same voting system to predict the labels in the validation data set.
 
 
 
@@ -159,5 +159,5 @@ predstest = data.frame(knn = predtest_knn,
                        gbm = predtest_gbm,
                        bag = predtest_bag,
                        rf = predtest_rf)
-apply(predstest, 1, majority)
+#apply(predstest, 1, majority) #the answer to the prediction quiz
 ```
